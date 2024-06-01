@@ -1,20 +1,28 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet } from "react-router-dom"
+import Footer from "./components/Footer"
+import Nav from "./components/Nav"
+import { Main } from "./components/Main"
 
-function App() {
-  // const [count, setCount] = useState(0)
 
+
+
+
+export const Layout = () => {
   return (
     <>
-      <div>
-        
-      <h1>App</h1>
-      </div>
-
+      <Nav/>
+   
+      <Main>
+        <Outlet/>
+      </Main>
+      <Footer/>
     </>
   )
 }
+export default function Body() {
+  return (
+  <div className="body-grid">
+    <h1>This is the main body</h1>
+  </div>)
+}
 
-export default App
